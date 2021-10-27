@@ -1,0 +1,15 @@
+<app-bar></app-bar>
+<app-side-bar></app-side-bar>
+<div *ngIf="suppliersInfo" class="content">
+  <h2>Número de Fornecedores: {{ suppliersInfo.numberOfSuppliers }}</h2>
+  <h2>Lista de Fornecedores</h2>
+  <ul class="suppliers">
+    <li *ngFor="let s of suppliersInfo.suppliers">
+      <p>
+        <a routerLink="/dashboard/supplier/{{ s.SupplierID }}">{{
+          s.CompanyName
+        }}</a>
+      </p>
+    </li>
+  </ul>
+</div>
